@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>feedback-form</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+        
+    </style>
+</head>
+
+<body>
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Prabhat</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Services
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </li>
+              </ul>
+              <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+              </form>
+            </div>
+          </nav>
+          
+
+    </div>
+    <div class="container">
+        <h2>Feedback</h2>
+        <div class="mb-4 small">
+            Please provide your feedback in the form below
+        </div>
+        <form name="feedback_form" id="feedback_form" method="post" action="/api/feedback/submit">
+            <label>How do you rate your overall experience?</label>
+            <div class="mb-3 d-flex flex-row py-1">
+                <div class="form-check mr-3">
+                    <input class="form-check-input" type="radio" name="rating" id="rating_bad" value="bad">
+                    <label class="form-check-label" for="rating_bad">
+                        Bad
+                    </label>
+                </div>
+
+                <div class="form-check mx-3">
+                    <input class="form-check-input" type="radio" name="rating" id="rating_good" value="good">
+                    <label class="form-check-label" for="rating_good">
+                        Good
+                    </label>
+                </div>
+
+                <div class="form-check mx-3">
+                    <input class="form-check-input" type="radio" name="rating" id="rating_excellent" value="excellent">
+                    <label class="form-check-label" for="rating_excellent">
+                        Excellent!
+                    </label>
+                </div>
+            </div>
+            <div class="mb-4">
+                <label class="form-label" for="feedback_comments">Comments:</label>
+                <textarea class="form-control" required rows="6" name="comments" id="feedback_comments"></textarea>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label class="form-label" for="feedback_name">Your Name:</label>
+                    <input type="text" required name="name" class="form-control" id="feedback_name" />
+                </div>
+
+                <div class="col mb-4">
+                    <label class="form-label" for="feedback_email">Email:</label>
+                    <input type="email" name="email" required class="form-control" id="feedback_email" />
+                </div>
+            </div>
+            <button type="submit" class="btn btn-success btn-lg">Submit</button>
+        </form>
+    </div>
+</body>
+
+</html>
